@@ -3,5 +3,8 @@ package main
 import "fmt"
 
 func main (){
-	fmt.Println("Hello !!")
+	configs := map[string]int
+	if(configs=nil){
+		fmt.Println("config is nil ")
+	}
 }
