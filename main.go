@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func sum(nunms ...int) int {
 	total := 0
@@ -16,6 +19,14 @@ func divide(a, b int) (float64, error) {
 	return float64(a) / float64(b), nil
 }
 
+func split(name string) (firstName, lastName string) {
+
+	index := strings.Index(name, " ")
+	if index == -1 {
+		return name, ""
+	}
+	return name[:index], name[index+1:]
+}
 func main() {
 
 	val, err := divide(10, 2)
@@ -23,5 +34,7 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(val)
+	first, last := split("mohamed nabil")
+	fmt.Println(first, last)
 
 }
