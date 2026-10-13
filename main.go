@@ -77,6 +77,7 @@ func deleteContact(id int) bool {
 	println("Contact Deleted ", id)
 	return true
 }
+///
 func main() {
 	addContact("mohamed", "[EMAIL_ADDRESS]", "01012345678")
 	addContact("kareem", "[EMAIL_ADDRESS]", "01012345679")
