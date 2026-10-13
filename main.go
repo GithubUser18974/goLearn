@@ -9,9 +9,19 @@ func sum(nunms ...int) int {
 	}
 	return total
 }
+func divide(a, b int) (float64, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("cannot divide by zero")
+	}
+	return float64(a) / float64(b), nil
+}
 
 func main() {
-	fmt.Println(sum(1, 2))
-	fmt.Println(sum(1, 2, 3))
-	fmt.Println(sum(1, 2, 3, 4))
+
+	val, err := divide(10, 2)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(val)
+
 }
