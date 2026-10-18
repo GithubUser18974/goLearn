@@ -33,8 +33,9 @@ func (e MathError) Error() string {
 	return fmt.Sprintf("Math error in %s (%s): %s", e.Operations, strings.Join(inputs, ","), e.MSG)
 }
 
-func sum(nums ...int) (int, error) {
-	total := 0
+func sum[T int | float32 | float64](nums ...T) (T, error) {
+	var total T
+	total = 0
 	for _, num := range nums {
 		total += num
 	}
