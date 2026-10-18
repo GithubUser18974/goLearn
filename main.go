@@ -12,6 +12,7 @@ type MathError struct {
 	MSG        string
 }
 
+// hhello
 func (e MathError) Error() string {
 	var inputs []string
 	if e.Operations == "Division" {
